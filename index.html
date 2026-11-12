@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ - egos Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        discord: {
+                            dark: '#313338',
+                            darker: '#2b2d31',
+                            input: '#1e1f22',
+                            blurple: '#5865f2',
+                            blurpleHover: '#4752c4',
+                            textNormal: '#dbdee1',
+                            textMuted: '#949ba4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-discord-dark text-discord-textNormal min-h-screen flex flex-col justify-between font-sans">
 
+    <!-- Header -->
+    <header class="bg-discord-darker border-b border-[#222327] py-4 px-6 shadow-md">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-discord-blurple flex items-center justify-center font-bold text-white text-lg">
+                    eg
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white tracking-wide">egos Support</h1>
+                    <p class="text-xs text-discord-textMuted">Trung tâm trợ giúp và báo lỗi</p>
+                </div>
+            </div>
+            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full font-medium">
+                ● Hệ thống hoạt động
+            </span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-2xl w-full mx-auto p-6 my-8">
+        <div class="bg-discord-darker rounded-lg p-8 shadow-xl border border-[#222327]">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-white mb-2">Gửi yêu cầu hỗ trợ</h2>
+                <p class="text-sm text-discord-textMuted">
+                    Bạn gặp sự cố với bot <strong>egos</strong> hoặc có thắc mắc cần giải đáp? Hãy gửi thông tin cho chúng tôi. Yêu cầu sẽ được chuyển tiếp trực tiếp đến hộp thư của quản trị viên.
+                </p>
+            </div>
+
+            <form id="supportForm" onsubmit="sendEmail(event)" class="space-
