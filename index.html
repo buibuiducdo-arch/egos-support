@@ -56,4 +56,70 @@
                 </p>
             </div>
 
-            <form id="supportForm" onsubmit="sendEmail(event)" class="space-
+            <form id="supportForm" onsubmit="sendEmail(event)" class="space-y-5">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-discord-textMuted mb-2">
+                        Tên của bạn / Discord Tag
+                    </label>
+                    <input type="text" id="name" required placeholder="Ví dụ: HoangNam#1234" 
+                        class="w-full bg-discord-input border border-transparent focus:border-discord-blurple rounded p-3 text-sm text-white placeholder-discord-textMuted/50 focus:outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-discord-textMuted mb-2">
+                        Email liên hệ của bạn
+                    </label>
+                    <input type="email" id="email" required placeholder="name@example.com" 
+                        class="w-full bg-discord-input border border-transparent focus:border-discord-blurple rounded p-3 text-sm text-white placeholder-discord-textMuted/50 focus:outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-discord-textMuted mb-2">
+                        Loại yêu cầu
+                    </label>
+                    <select id="category" 
+                        class="w-full bg-discord-input border border-transparent focus:border-discord-blurple rounded p-3 text-sm text-white focus:outline-none transition">
+                        <option value="Báo lỗi (Bug Report)">Báo lỗi (Bug Report)</option>
+                        <option value="Đề xuất tính năng mới">Đề xuất tính năng mới</option>
+                        <option value="Hỗ trợ kỹ thuật / Cài đặt">Hỗ trợ kỹ thuật / Cài đặt</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-discord-textMuted mb-2">
+                        Nội dung chi tiết
+                    </label>
+                    <textarea id="message" rows="5" required placeholder="Mô tả chi tiết vấn đề bạn đang gặp phải..." 
+                        class="w-full bg-discord-input border border-transparent focus:border-discord-blurple rounded p-3 text-sm text-white placeholder-discord-textMuted/50 focus:outline-none transition resize-none"></textarea>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <button type="submit" 
+                        class="w-full bg-discord-blurple hover:bg-discord-blurpleHover text-white font-medium py-3 px-4 rounded transition duration-200 shadow-md">
+                        Gửi yêu cầu qua ứng dụng Email
+                    </button>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" onclick="openGmail()"
+                            class="bg-[#383a40] hover:bg-[#4e5058] text-white text-sm font-medium py-2.5 px-4 rounded transition duration-200">
+                            Mở Gmail trên Web
+                        </button>
+                        <button type="button" onclick="copyContent(this)"
+                            class="bg-[#383a40] hover:bg-[#4e5058] text-white text-sm font-medium py-2.5 px-4 rounded transition duration-200">
+                            Sao chép nội dung
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-xs text-discord-textMuted border-t border-[#222327]">
+        <p>&copy; 2026 egos Bot Support. Bản quyền thuộc về quản trị viên.</p>
+    </footer>
+
+    <script>
+        function getFormattedData() {
+            const name = document.getElementById('name').value.trim() ||
